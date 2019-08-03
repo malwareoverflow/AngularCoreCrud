@@ -12,17 +12,7 @@ namespace AngularCoreCrud.Models
     TblEmployee GetSingle(int empId);
 
 
- IEnumerable<TblEmployee> GetAllEmployees();
-
- int AddEmployee(TblEmployee employee);
-
-
- int UpdateEmployee(TblEmployee employee);
-
- int DeleteEmployee(int id);
-
-
-List<TblEmployee> GetEmployees();
+ 
 
    }
 } 

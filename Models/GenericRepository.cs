@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace AngularCoreCrud.Models
 {
-
+//COMMON IMPLEMENTATIONS GOES HERE//
 public abstract class GenericRepository<C, T> : 
     IGenericRepository<T> where T : class where C : DbContext, new() {
 

@@ -19,14 +19,21 @@ namespace AngularCoreCrud.Controllers
         [Route("api/Employee/Index")]  
         public IEnumerable<TblEmployee> Index()  
         {  
-            return empRepo.GetAllEmployees();  
+            return empRepo.GetAll();  
         }  
   
         [HttpPost]  
         [Route("api/Employee/Create")]  
         public int Create([FromBody] TblEmployee employee)  
         {  
-            return empRepo.AddEmployee(employee);  
+            try{
+
+                 empRepo.Add(employee); 
+                 return 1; 
+            }catch(Exception){
+return 0;
+            }
+            
         }  
   
         [HttpGet]  
@@ -40,21 +47,35 @@ namespace AngularCoreCrud.Controllers
         [Route("api/Employee/Edit")]  
         public int Edit([FromBody]TblEmployee employee)  
         {  
-            return empRepo.UpdateEmployee(employee);  
+            try{
+empRepo.Edit(employee);  
+return 1;
+
+            }catch(Exception){
+                return 0;
+            }
         }  
   
         [HttpDelete]  
         [Route("api/Employee/Delete/{id}")]  
         public int Delete(int id)  
         {  
-            return empRepo.DeleteEmployee(id);  
+            try{
+
+empRepo.Delete(new TblEmployee(){EmployeeId=id});
+return 1;
+            }catch(Exception)
+            {
+return 0;
+            }
+      
         }  
   
         [HttpGet]  
         [Route("api/Employee/GetCityList")]  
         public IEnumerable<TblCities> Details()  
         {  
-            return cityRepo.GetCities();  
+            return cityRepo.GetAll();  
         }  
     }  
 }
