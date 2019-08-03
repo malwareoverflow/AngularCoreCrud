@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';  
 import { Http, Headers } from '@angular/http';  
 import { Router, ActivatedRoute } from '@angular/router';  
-import { EmployeeService } from './empservice.service'  
+import { EmployeeService } from './services/empservice.service'  
   
 @Component({  
     templateUrl: './fetchemployee.component.html'  

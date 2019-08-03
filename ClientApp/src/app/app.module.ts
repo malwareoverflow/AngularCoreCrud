@@ -1,51 +1,39 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-
-
-import { EmployeeService } from './empservice.service'  
-
-
+import { NgModule } from '@angular/core';  
+import { EmployeeService } from './fetchemployee/services/empservice.service'  
+import { CommonModule } from '@angular/common';  
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
+import { HttpModule } from '@angular/http';  
+import { RouterModule } from '@angular/router';  
+  
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
-
-
+import { HomeComponent } from './home/home.component'; 
 import { FetchEmployeeComponent } from './fetchemployee/fetchemployee.component'  
 import { createemployee } from './addemployee/addemployee.component'  
   
-
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
-    FetchEmployeeComponent,  
-    createemployee,  
-  ],
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
-    FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-
-      { path: 'fetch-employee', component: FetchEmployeeComponent },  
-      { path: 'register-employee', component: createemployee },  
-      { path: 'employee/edit/:id', component: createemployee },  
-      { path: '**', redirectTo: 'home' }  
-    ])
-  ],
-  providers: [EmployeeService] ,
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+@NgModule({  
+    declarations: [  
+        AppComponent,  
+        NavMenuComponent,  
+        HomeComponent,  
+        FetchEmployeeComponent,  
+        createemployee,  
+    ],  
+    imports: [  
+        CommonModule,  
+        HttpModule,  
+        FormsModule,  
+        ReactiveFormsModule,  
+        RouterModule.forRoot([  
+            { path: '', redirectTo: 'home', pathMatch: 'full' },  
+            { path: 'home', component: HomeComponent },  
+            { path: 'fetch-employee', component: FetchEmployeeComponent },  
+            { path: 'register-employee', component: createemployee },  
+            { path: 'employee/edit/:id', component: createemployee },  
+            { path: '**', redirectTo: 'home' }  
+        ])  
+    ],  
+    providers: [EmployeeService]  
+})  
+export class AppModuleShared {  
+}
