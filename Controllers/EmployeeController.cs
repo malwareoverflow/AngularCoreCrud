@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace AngularCoreCrud.Controllers
 {
 
+ [Route("api/[controller]")]
+
  public class EmployeeController : Controller  
     {  
         EmployeeRepository empRepo = new EmployeeRepository();  

@@ -5,10 +5,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { EmployeeService } from './services/empservice.service';  
   
 @Component({  
-    templateUrl: './AddEmployee.component.html'  
+    templateUrl: './addemployee.component.html'  
 })  
   
-export class createemployee implements OnInit {  
+export class AddEmployeeComponent implements OnInit {  
     employeeForm: FormGroup;  
     title: string = "Create";  
     employeeId: number;  
@@ -17,6 +17,7 @@ export class createemployee implements OnInit {
   
     constructor(private _fb: FormBuilder, private _avRoute: ActivatedRoute,  
         private _employeeService: EmployeeService, private _router: Router) {  
+            debugger;
         if (this._avRoute.snapshot.params["id"]) {  
             this.employeeId = this._avRoute.snapshot.params["id"];  
         }  

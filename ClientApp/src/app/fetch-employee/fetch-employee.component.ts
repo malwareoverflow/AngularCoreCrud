@@ -2,22 +2,23 @@ import { Component, Inject } from '@angular/core';
 import { Http, Headers } from '@angular/http';  
 import { Router, ActivatedRoute } from '@angular/router';  
 import { EmployeeService } from './services/empservice.service'  
-  
+import { FormsModule } from '@angular/forms';
 @Component({  
-    templateUrl: './fetchemployee.component.html'  
+    selector: 'app-fetch-employee',
+    templateUrl: './fetch-employee.component.html'  
 })  
-  
+
 export class FetchEmployeeComponent {  
     public empList: EmployeeData[];  
   
     constructor(public http: Http, private _router: Router, private _employeeService: EmployeeService) {  
-        this.getEmployees();  
+         this.getEmployees();  
     }  
   
     getEmployees() {  
-        this._employeeService.getEmployees().subscribe(  
-            data => this.empList = data  
-        )  
+         this._employeeService.getEmployees().subscribe(  
+             data => this.empList = data  
+         )  
     }  
   
     delete(employeeID) {  
