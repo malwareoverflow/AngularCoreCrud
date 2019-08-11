@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { EmployeeService } from './services/empservice.service'  
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
+import { HttpModule } from '@angular/http';  
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -17,6 +18,7 @@ import { FetchEmployeeComponent } from './fetch-employee/fetch-employee.componen
 @NgModule({
   declarations: [
     AppComponent,
+    
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
@@ -28,6 +30,7 @@ import { FetchEmployeeComponent } from './fetch-employee/fetch-employee.componen
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
+    HttpModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([

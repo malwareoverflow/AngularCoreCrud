@@ -5,7 +5,8 @@ import { EmployeeService } from './services/empservice.service'
 import { FormsModule } from '@angular/forms';
 @Component({  
     selector: 'app-fetch-employee',
-    templateUrl: './fetch-employee.component.html'  
+    templateUrl: './fetch-employee.component.html'  ,
+    providers: [EmployeeService]
 })  
 
 export class FetchEmployeeComponent {  

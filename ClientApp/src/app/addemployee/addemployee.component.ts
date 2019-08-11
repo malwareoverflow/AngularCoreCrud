@@ -5,7 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { EmployeeService } from './services/empservice.service';  
   
 @Component({  
-    templateUrl: './addemployee.component.html'  
+    templateUrl: './addemployee.component.html'  ,
+    providers: [EmployeeService]
 })  
   
 export class AddEmployeeComponent implements OnInit {  
