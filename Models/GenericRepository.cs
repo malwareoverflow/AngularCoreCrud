@@ -30,14 +30,17 @@ public abstract class GenericRepository<C, T> :
 
     public virtual void Add(T entity) {
         _entities.Set<T>().Add(entity);
+       Save();
     }
 
     public virtual void Delete(T entity) {
         _entities.Set<T>().Remove(entity);
+          Save();
     }
 
     public virtual void Edit(T entity) {
         _entities.Entry(entity).State = EntityState.Modified;
+           Save();
     }
 
     public virtual void Save() {
