@@ -32,7 +32,7 @@ namespace AngularCoreCrud.Controllers
 
                  empRepo.Add(employee); 
                  return 1; 
-            }catch(Exception){
+            }catch(Exception ex){
 return 0;
             }
             
@@ -42,7 +42,7 @@ return 0;
         [Route("api/Employee/Details/{id}")]  
         public TblEmployee Details(int id)  
         {  
-            return empRepo.GetSingle(id);  
+            return empRepo.FindBy(x=>x.EmployeeId==id).FirstOrDefault();  
         }  
   
         [HttpPut]  

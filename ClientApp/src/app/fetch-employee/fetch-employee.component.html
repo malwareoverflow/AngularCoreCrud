@@ -8,7 +8,9 @@
     <a [routerLink]="['/register-employee']">Create New</a>  
 </p>  
   
-<table class='table' *ngIf="empList">  
+
+
+<table class='table' *ngIf="pagedItems">
     <thead>  
         <tr>  
             <th>EmployeeId</th>  
@@ -19,7 +21,7 @@
         </tr>  
     </thead>  
     <tbody>  
-        <tr *ngFor="let emp of empList">  
+        <tr *ngFor="let emp of pagedItems">  
             <td>{{ emp.employeeId }}</td>  
             <td>{{ emp.name }}</td>  
             <td>{{ emp.gender }}</td>  
@@ -33,3 +35,24 @@
         </tr>  
     </tbody>  
 </table>
+
+  <!-- items being paged -->
+  <!-- <div *ngFor="let item of pagedItems">{{item.employeeId}}</div> -->
+ <!-- pager -->
+ <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+    <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(1)">First</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+    </li>
+    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+        <a (click)="setPage(page)">{{page}}</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.currentPage + 1)">Next</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.totalPages)">Last</a>
+    </li>
+</ul>

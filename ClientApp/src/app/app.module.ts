@@ -14,6 +14,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
 import { FetchEmployeeComponent } from './fetch-employee/fetch-employee.component'  
  import { AddEmployeeComponent } from './addemployee/addemployee.component'  
+import { PagerService } from './fetch-employee/services/PagerService.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FetchEmployeeComponent } from './fetch-employee/fetch-employee.componen
        { path: 'employee/edit/:id', component: AddEmployeeComponent },  
     ])
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService,PagerService],
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

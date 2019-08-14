@@ -9,7 +9,7 @@ namespace AngularCoreCrud.Models
 
    public interface IEmployeeRepository : IGenericRepository<TblEmployee> {
     
-    TblEmployee GetSingle(int empId);
+   //  TblEmployee GetSingle(int empId);
 
 
  

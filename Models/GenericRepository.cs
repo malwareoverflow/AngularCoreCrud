@@ -16,11 +16,14 @@ public abstract class GenericRepository<C, T> :
         set { _entities = value; }
     }
 
-    public virtual IQueryable<T> GetAll() {
+    public virtual IQueryable<T> GetAll()
+     {
 
         IQueryable<T> query = _entities.Set<T>();
         return query;
     }
+
+     
 
     public IQueryable<T> FindBy(System.Linq.Expressions.Expression<Func<T, bool>> predicate) {
 
