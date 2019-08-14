@@ -37,8 +37,9 @@ private readonly ICitiesRepository cityRepo;
         public int Create([FromBody] TblEmployee employee)  
         {  
             try{
-
-                 empRepo.Add(employee); 
+                
+                empRepo.Add(employee); 
+                
                  return 1; 
             }catch(Exception ex){
 return 0;
