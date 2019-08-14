@@ -13,11 +13,11 @@ CREATE TABLE `tblCities` (
 );
 
 
-INSERT INTO tblCities VALUES('New Delhi');  
-INSERT INTO tblCities VALUES('Mumbai');  
+INSERT INTO tblCities VALUES('Karachi');  
+INSERT INTO tblCities VALUES('Lahore');  
 INSERT INTO tblCities VALUES('Hyderabad');  
-INSERT INTO tblCities VALUES('Chennai');  
-INSERT INTO tblCities VALUES('Bengaluru');
+INSERT INTO tblCities VALUES('Multan');  
+INSERT INTO tblCities VALUES('Islamabad');
 
 
 ON VS CODE RUN AFTER CREATING DATABASE
