@@ -1,3 +1,4 @@
+using AngularCoreCrud.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,9 @@ namespace AngularCoreCrud
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+                services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+                 services.AddScoped<ICitiesRepository, CitiesRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

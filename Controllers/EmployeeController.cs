@@ -12,10 +12,18 @@ namespace AngularCoreCrud.Controllers
 
  public class EmployeeController : Controller  
     {  
-        EmployeeRepository empRepo = new EmployeeRepository();  
-  
+//         EmployeeRepository empRepo = new EmployeeRepository();  
+//   CitiesRepository cityRepo = new CitiesRepository();  
+private readonly IEmployeeRepository empRepo;
 
-   CitiesRepository cityRepo = new CitiesRepository();  
+private readonly ICitiesRepository cityRepo;
+  public EmployeeController(IEmployeeRepository employee, ICitiesRepository cities)
+    {
+      empRepo=employee;
+      cityRepo=cities;
+    }
+
+   
   
         [HttpGet]  
         [Route("api/Employee/Index")]  
