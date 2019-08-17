@@ -18,6 +18,9 @@ namespace AngularCoreCrud.Models
         public virtual DbSet<TblCities> TblCities { get; set; }
         public virtual DbSet<TblEmployee> TblEmployee { get; set; }
 
+
+       public virtual DbSet<User> Users { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -50,6 +53,7 @@ namespace AngularCoreCrud.Models
 
                 entity.Property(e => e.EmployeeId)
                     .HasColumnName("EmployeeID")
+                    //for auto increment
                     .ValueGeneratedOnAdd();
             });
         }

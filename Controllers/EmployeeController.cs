@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AngularCoreCrud.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AngularCoreCrud.Controllers
 {
 
  
+//[Authorize]
+  // [Route("[controller]")]
+
 
  public class EmployeeController : Controller  
     {  

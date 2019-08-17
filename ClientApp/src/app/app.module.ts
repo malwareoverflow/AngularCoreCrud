@@ -16,6 +16,16 @@ import { FetchEmployeeComponent } from './fetch-employee/fetch-employee.componen
  import { AddEmployeeComponent } from './addemployee/addemployee.component'  
 import { PagerService } from './fetch-employee/services/PagerService.service';
 
+
+
+import { AppConfig } from './app.config';
+
+import { AlertComponent } from '../app/_directives/alert.component';
+import { AuthGuard } from './_guards/index';
+import { AlertService, AuthenticationService, UserService } from './_services/index';
+import { LoginComponent } from './login/index';
+import { RegisterComponent } from './register/index';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +35,11 @@ import { PagerService } from './fetch-employee/services/PagerService.service';
     CounterComponent,
     FetchDataComponent,
      FetchEmployeeComponent,
-     AddEmployeeComponent
+     AddEmployeeComponent,
+    
+     LoginComponent,
+     RegisterComponent,
+     AlertComponent
 
   ],
   imports: [
@@ -40,10 +54,15 @@ import { PagerService } from './fetch-employee/services/PagerService.service';
       { path: 'fetch-data', component: FetchDataComponent },
        { path: 'fetch-employee', component: FetchEmployeeComponent },  
        { path: 'register-employee', component: AddEmployeeComponent },  
-       { path: 'employee/edit/:id', component: AddEmployeeComponent },  
+       { path: 'login-user', component: LoginComponent }, 
+       { path: 'register-user', component: RegisterComponent }, 
+      
     ])
   ],
-  providers: [EmployeeService,PagerService],
+  providers: [EmployeeService,PagerService,AuthGuard,
+    AlertService,
+    AuthenticationService,
+    UserService,AppConfig],
  
   bootstrap: [AppComponent]
 })
