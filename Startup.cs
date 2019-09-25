@@ -2,6 +2,7 @@ using System.Text;
 using AngularCoreCrud.Helpers;
 using AngularCoreCrud.Models;
 using AngularCoreCrud.Services;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,7 +34,7 @@ namespace AngularCoreCrud
 
              services.AddCors();
         
-            //services.AddAutoMapper();
+        services.AddAutoMapper(typeof(Startup));
 
 
   // configure strongly typed settings objects

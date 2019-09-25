@@ -50,12 +50,14 @@ import { RegisterComponent } from './register/index';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
        { path: 'fetch-employee', component: FetchEmployeeComponent },  
        { path: 'register-employee', component: AddEmployeeComponent },  
        { path: 'login-user', component: LoginComponent }, 
        { path: 'register-user', component: RegisterComponent }, 
+       { path: 'employee/edit/:id', component: AddEmployeeComponent },  
       
     ])
   ],
